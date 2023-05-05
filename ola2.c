@@ -84,17 +84,20 @@ void obtem_horizontal(noh *raiz, int pre[], int nivel[], int *pv, int nivela){
 
 int encontra_maior(int vet[], int tama){
     int i, ma;
+    ma = vet[0];
     for(i=0;i<tama;i++){
-        
-
+        if(ma > vet[i]){
+            ma = vet[i];
+        }
     }
+    return ma;
 }
 
 void imprime_horizontal(int pre[], int nivel[], int hor[], int tam){
     int i, j;
     hor[0] = pre[0];
     for(i=1;i<tam;i++){
-        for(j=1;j<)
+        for(j=1;j<){}
     }
 }
 
