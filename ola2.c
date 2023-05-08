@@ -14,14 +14,14 @@ void obtem_horizontal(noh *raiz, int pre[], int nivel[], int *pv, int nivela);
 
 int encontra_maior(int vet[], int tama);
 
-void imprime_horizontal(int pre[], int nivel[], int hor[], int tam);
+void imprime_horizontal(int pre[], int nivel[], int hor[], int tam, int pmax);
 
 void limpa_arvore(noh *raiz);
 
 int main(){
     noh *raiz;
     raiz = NULL;
-    int n, qno, vno, i, j,*pre, *nivel, *hor, nivela = -1, pv = 0;
+    int n, qno, vno, i, j,*pre, *nivel, *hor, nivela = -1, pv = 0, pmax;
     scanf("%d", &n);
     for(i=0;i<n;i++){
         scanf("%d",&qno);
@@ -32,14 +32,16 @@ int main(){
         pre = malloc(qno * sizeof(int));
         nivel = malloc(qno * sizeof(int));
         hor  = malloc(qno * sizeof(int));
-        printf("Case %d:", i+1);
-        printf("\n");
         obtem_horizontal(raiz, pre, nivel, &pv, nivela);
-        imprime_horizontal(pre, nivel, qno);
-        limpa_arvore(raiz);
+        pmax = encontra_maior(nivel, qno);
+        printf("\nCase %d:\n", i+1);
+        imprime_horizontal(pre, nivel, hor, qno, pmax);
+        printf("\n");
+        pv = 0;
         free(pre);
         free(nivel);
         free(hor);
+        limpa_arvore(raiz);
         raiz = NULL;
     }
      return 0;
@@ -72,7 +74,6 @@ void obtem_horizontal(noh *raiz, int pre[], int nivel[], int *pv, int nivela){
         pre[*pv] = raiz->no;
         nivel[*pv] = nivela;
         *pv = (*pv) + 1;
-        printf("%d\n",pv);
         obtem_horizontal(raiz->esq, pre, nivel, pv, nivela);
         obtem_horizontal(raiz->dir, pre, nivel, pv, nivela);
         nivela--;
@@ -86,19 +87,26 @@ int encontra_maior(int vet[], int tama){
     int i, ma;
     ma = vet[0];
     for(i=0;i<tama;i++){
-        if(ma > vet[i]){
+        if(ma < vet[i]){
             ma = vet[i];
         }
     }
     return ma;
 }
 
-void imprime_horizontal(int pre[], int nivel[], int hor[], int tam){
-    int i, j;
-    hor[0] = pre[0];
-    for(i=1;i<tam;i++){
-        for(j=1;j<){}
+void imprime_horizontal(int pre[], int nivel[], int hor[], int tam, int pmax){
+    int i, j, k=0;
+    for(j=0; j<(pmax+1); j++){
+        for(i=0;i<tam;i++){
+            if(nivel[i]==j){
+                hor[k] = pre[i];
+                k++;
+            }
+        }
     }
+    for(j=0;j<tam;j++){
+            printf("%d ", hor[j]);
+        }
 }
 
 void limpa_arvore(noh *raiz){
@@ -108,4 +116,3 @@ void limpa_arvore(noh *raiz){
         free(raiz);
     }
 }
-
