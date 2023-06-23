@@ -1,6 +1,6 @@
-package com.github.kyriosdata.poo.t07;
+package com.github.joseppe.t07;
 
-public class PessoaJuridica extends Pessoa {
-    private String cnpj;
+public class PessoaJuridica extends Pessoa{
     private String nomeFantasia;
+    private String cnpj;
 }

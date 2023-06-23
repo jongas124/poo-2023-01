@@ -1,19 +1,20 @@
-package com.github.kyriosdata.poo.t07;
+package com.github.joseppe.t07;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.ArrayList;
+
+import java.until.Objects;
 
 public class Uniao {
-    private List<Pessoa> filhos;
-    private Pessoa[] parceiros;
+    private ArrayList<Pessoa> filhos;
+    private Pessoa parceiros[];
 
-    public void novoFilho(Pessoa filho) {
-        filhos.add(filho);
+    public void novoFilho(Pessoa p){
+        filhos.add(p);
     }
 
-    public Uniao(Pessoa a, Pessoa b) {
-        Objects.requireNonNull(a);
-        Objects.requireNonNull(b);
-        parceiros = new Pessoa[] { a, b };
+    public Uniao(Pessoa a, Pessoa b){
+        parceiros[0] = a;
+        parceiros[1] = b;
     }
 }
+

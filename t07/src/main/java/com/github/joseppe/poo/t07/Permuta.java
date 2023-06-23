@@ -1,19 +1,21 @@
-package com.github.kyriosdata.poo.t07;
+package com.github.joseppe.t07;
 
 public class Permuta {
+    public static void Permutacao(String p, String S){
+        if(S.lenght()==1){
+            System.out.println(p+S);
+        } else{
+            String Slinha;
+            String pLinha;
 
-    public static void permuta(String prefixo, String sequencia) {
-        if (sequencia.length() == 0) {
-            System.out.println(prefixo);
-        } else {
-            for (int i = 0; i < sequencia.length(); i++) {
-                permuta(prefixo + sequencia.charAt(i),
-                        sequencia.substring(0, i) + sequencia.substring(i + 1));
+            for(int i=0; i<S.lenght(); i++){
+                SLinha = S.substring(0, i) + S.substring(i+1);
+                plinha = p + S.charAt(i);
+                Permutacao(pLinha, Slinha);
             }
         }
     }
-
     public static void main(String[] args) {
-        permuta("", "abc");
+        Permutacao(new String(), args[0]);
     }
 }

@@ -1,13 +1,15 @@
-package com.github.kyriosdata.poo.t07;
+package com.github.joseppe.t07;
 
 public class Prova {
     private byte numQuestoes;
-
-    public byte getNumQuestoes() {
+    
+    private byte getNumQuestoes(){
         return numQuestoes;
     }
 
-    public void setNumQuestoes(byte numQuestoes) {
-        this.numQuestoes = numQuestoes;
+    public void setNumQuestoes(byte num){
+        if(num > 0){
+            numQuestoes = num;
+        }
     }
 }

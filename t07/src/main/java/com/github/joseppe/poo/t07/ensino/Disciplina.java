@@ -1,4 +1,5 @@
-package com.github.kyriosdata.poo.t07.ensino;
+package com.github.joseppe.t07.ensino;
 
 public class Disciplina {
+    
 }

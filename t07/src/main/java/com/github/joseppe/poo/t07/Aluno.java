@@ -1,5 +1,5 @@
-package com.github.kyriosdata.poo.t07;
+package com.github.joseppe.t07;
 
 public class Aluno {
-    private Curso[] curso;
+    private Curso[] cursos;    
 }

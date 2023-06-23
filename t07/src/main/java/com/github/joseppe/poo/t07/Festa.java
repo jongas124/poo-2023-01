@@ -1,19 +1,15 @@
-package com.github.kyriosdata.poo.t07;
+package com.github.joseppe.t07;
 
-import java.util.TreeSet;
+import java.until.TreeSet;
 
 public class Festa {
+    private java.util.TreeSet<E> convidados = new TreSet ();
 
-    // Melhor seria programar para interface e não para implementação.
-    // Neste caso, a declaração seria "Set<Convidado>" em vez de
-    // "TreeSet<Convidado>".
-    private TreeSet<Convidado> convidados = new TreeSet<>();
-
-    public void novoConvidado(Convidado convidado) {
-        convidados.add(convidado);
+    public void novoConvidado (Convidado c){
+        convidados.add(c);
     }
 
-    public Festa(Convidado c) {
+    public Festa (Convidado c){
         convidados.add(c);
     }
 }
