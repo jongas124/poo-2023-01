@@ -1,4 +1,4 @@
-package com.github.joseppe.t08.trabalho;
+package com.github.joseppe.t08.Trabalho;
 
 public class Pessoa {
     private String nome;

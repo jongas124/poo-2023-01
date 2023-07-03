@@ -4,10 +4,11 @@ public class Diretorio {
     String NameDiretorio;
     User Dono;
     List<User> UPermitidos;
-
+//Diretorio d = new Diretorio(Puta, Aql corno do hebert)
     public Diretorio(String Dame, User Dono){
         this.NameDiretorio = name;
-        this.Dono = dono;
+        this.Dono = dono; 
+        this.UPermitidos = 
     }
 
     public void addUsuario(User U){

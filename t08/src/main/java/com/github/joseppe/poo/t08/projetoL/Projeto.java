@@ -4,17 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Projeto {
-    private List<String> lingua;
+    private List<String> linguagens;
+    private String linguagem;
 
     public Projeto() {
-        this.lingua = new ArrayList<>();
+        this.linguagens = new ArrayList<>();
     }
 
-    public void insereLinguagem(String linguagem) {
-        linguagens.add(lingua);
+    public void insereLinguagem(String lingua) {
+        linguagens.add(linguagem);
     }
 
     public List<String> getLinguagens() {
-        return lingua;
+        return linguagens;
     }
 }
